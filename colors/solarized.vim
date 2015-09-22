@@ -538,12 +538,13 @@ endif
 
 exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
 
-exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
+exe "hi! Comment"        .s:fmt_none   .s:fg_base01 .s:bg_none
 "       *Comment         any comment
 
 exe "hi! Constant"       .s:fmt_none   .s:fg_cyan   .s:bg_none
 "       *Constant        any constant
 "        String          a string constant: "this is a string"
+exe "hi! String"         .s:fmt_none   .s:fg_cyan   .s:bg_none
 "        Character       a character constant: 'c', '\n'
 "        Number          a number constant: 234, 0xff
 "        Boolean         a boolean constant: TRUE, false
@@ -770,8 +771,28 @@ exe "hi! javaScript"        .s:fmt_none .s:fg_yellow .s:bg_none
 " perl highlighting "{{{
 " ---------------------------------------------------------------------
 exe "hi! perlHereDoc"    . s:fg_base1  .s:bg_back   .s:fmt_none
-exe "hi! perlVarPlain"   . s:fg_yellow .s:bg_back   .s:fmt_none
-exe "hi! perlStatementFileDesc". s:fg_cyan.s:bg_back.s:fmt_none
+exe "hi! perlVarPlain"   . s:fg_orange .s:bg_back   .s:fmt_none
+exe "hi! perlVarPlain2"   . s:fg_orange .s:bg_back   .s:fmt_none
+exe "hi! perlStatementFileDesc". s:fg_green.s:bg_back.s:fmt_none
+exe "hi! perlSpecialString" . s:fg_base1  .s:bg_back   .s:fmt_none
+exe "hi! perlConditional"   . s:fg_violet .s:bg_back   .s:fmt_none
+exe "hi! perlStatementStorage" . s:fg_yellow .s:bg_back   .s:fmt_none
+
+"}}}
+" javascript highlighting "{{{
+" ---------------------------------------------------------------------
+exe "hi! jsFuncCall"     . s:fg_blue    .s:bg_back   .s:fmt_none
+exe "hi! jsObjectKey"    . s:fg_violet  .s:bg_back   .s:fmt_none
+exe "hi! jsFunctionKey"  . s:fg_violet  .s:bg_back   .s:fmt_none
+exe "hi! jsBrackets"     . s:fg_blue    .s:bg_back   .s:fmt_none
+exe "hi! jsBraces"       . s:fg_yellow  .s:bg_back   .s:fmt_none
+exe "hi! jsFuncBraces"   . s:fg_yellow  .s:bg_back   .s:fmt_none
+exe "hi! jsParens"       . s:fg_orange  .s:bg_back   .s:fmt_none
+exe "hi! jsFuncParens"   . s:fg_orange  .s:bg_back   .s:fmt_none
+exe "hi! jsParensError"  . s:fg_base2   .s:bg_red    .s:fmt_none
+exe "hi! jsParensErrA"   . s:fg_base2   .s:bg_red    .s:fmt_none
+exe "hi! jsParensErrB"   . s:fg_base2   .s:bg_red    .s:fmt_none
+exe "hi! jsParensErrC"   . s:fg_base2   .s:bg_red    .s:fmt_none
 
 "}}}
 " tex highlighting "{{{
